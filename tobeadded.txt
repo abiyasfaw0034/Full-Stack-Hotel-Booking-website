@@ -1,0 +1,19 @@
+// navbar
+1, change the color to the back ground and change the color of the links
+2, account touch to log out like the mekina.net || 👍
+3, the sidebar click outside and close(like modal) 
+4, sizable custom sidebar in the phone
+
+// Auth
+1, in sign up {...register} to be more specific now is just || 👍
+2, google authenticator(sign in with google)
+
+// hotel
+1, map css(kinda stuck in there)
+
+
+//  responsive
+1, get rid of diplay grid when in small to get rid of the white part from the side
+
+// cards
+1, on hover, scale must increase like animaiton
