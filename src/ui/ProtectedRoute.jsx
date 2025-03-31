@@ -1,10 +1,10 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import Spinner from "./Spinner";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useUser } from "../auth/useUser";
+import { useAuth } from "../context/authContext/authContext";
+
 const FullPage = styled.div`
   height: 100vh;
   background-color: var(--color-grey-50);
@@ -15,30 +15,36 @@ const FullPage = styled.div`
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
-  // 1, load authenticated user
-  const { user, isAuthenticated, isLoading } = useUser();
+  const { userLoggedIn, isLoading, role } = useAuth(); // Use 'useAuth' here
 
-  // 2, redirect to login if not authenticated
+  // 1. Redirect if the user is not authenticated
+  useEffect(() => {
+    if (!userLoggedIn && !isLoading) {
+      navigate("/login"); // Redirect to login if not authenticated
+    }
 
-  useEffect(
-    function () {
-      if (!isAuthenticated && !isLoading) {
-        navigate("/login");
-      }
-    },
-    [isAuthenticated, isLoading, navigate]
-  );
+    // 2. Optionally, check the role if needed (e.g., restrict only to "user" role)
+    // if (userLoggedIn && role !== "user") {
+    //   navigate("/home"); // Redirect to home if the role is not "user"
+    // }
+  }, [userLoggedIn, isLoading, role, navigate]);
 
-  // 3, load the spinner
-  if (isLoading)
+  // 3. Display loading spinner while checking authentication
+  if (isLoading) {
     return (
-      <div>
+      <FullPage>
         <Spinner />
-      </div>
+      </FullPage>
     );
+  }
 
-  // 4, if there is render app
-  if (isAuthenticated) return children;
+  // 4. If authenticated, render the children
+  if (userLoggedIn && role === "user") {
+    return children;
+  }
+
+  // Return null or a fallback if authentication/role doesn't match
+  return null;
 }
 
 export default ProtectedRoute;

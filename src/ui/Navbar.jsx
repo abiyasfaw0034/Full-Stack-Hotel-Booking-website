@@ -16,15 +16,15 @@ function Navbar() {
   };
 
   return (
-    <nav className=" dark:bg-black w-full h-[15vh] flex justify-around items-center px-10  top-0 z-0 shadow-md">
+    <nav className=" dark:bg-black w-full h-[11vh] flex justify-around items-center  top-0 z-0 shadow-md">
       <div className={styles.logo}>
         <NavLink to="/" className="text-black dark:text-white">
-          ☁ EFOY ROOMS
+          ☁ Maderia
         </NavLink>
       </div>
       <ul className={styles.navLinks}>
         <li className="hidden md:block text-black dark:text-white">
-          <NavLink to="/about">Reservations</NavLink>
+          <NavLink to="/reservation">Reservations</NavLink>
         </li>
 
         <li>
@@ -32,7 +32,6 @@ function Navbar() {
             <UserToggle />
           </Modal>
         </li>
-
         <li className="hidden md:block text-black dark:text-white ">
           <NavLink to="/about">About Us</NavLink>
         </li>
@@ -40,7 +39,7 @@ function Navbar() {
         <li className="md:hidden ">
           {isOpen ? (
             <IoMenu
-              className="w-12 h-12 text-black"
+              className="w-12 h-12 text-black dark:text-white"
               onClick={(on) => setIsOpen(!on)}
             />
           ) : (

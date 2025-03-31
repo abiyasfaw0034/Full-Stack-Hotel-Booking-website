@@ -3,13 +3,13 @@
 import { Link } from "react-router-dom";
 
 function Hotel({ hotel }) {
-  const { name, imageUrls, id, location } = hotel;
+  const { name, imageUrl, id, location } = hotel;
   // const { address, amenities, city, contactNumber, country, description, email, hotelId, imageUrl, location, name, rating, ...rest } = hotel;
 
   // This will create variables for each property name but not their corresponding values
   const { _lat, _long } = location;
 
-  const showitem = imageUrls.at(0);
+  const showitem = imageUrl.at(0);
 
   return (
     <Link to={`/hotel/${id}?lat=${_lat}&lng=${_long}`}>

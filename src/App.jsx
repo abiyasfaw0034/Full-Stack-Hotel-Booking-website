@@ -1,12 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -30,6 +24,8 @@ import UpdateHotel from "./admin/features/updatehotel/UpdateHotel";
 import ViewHotels from "./admin/features/viewhotels/ViewHotels";
 import DeleteHotel from "./admin/features/deletehotel/DeleteHotel";
 import AdminUser from "./admin/pages/AdminUser";
+import BigRoomDetail from "./ui/RoomDetail";
+import Reservation from "./pages/Reservation";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -60,14 +56,14 @@ function App() {
             <Route path="/hotel/:hotelId" element={<HotelDetail />} />
             <Route
               path="/hotel/:hotelId/room/:roomId"
-              element={<div>specfific room</div>}
+              element={<BigRoomDetail />}
             />
+            {/* <div>specfific room</div> */}
             <Route
               path="/hotel/:hotelId/room/:roomId/booking"
-              element={<div> booking</div>}
+              element={<Booking />}
             />
-            <Route path="/demo" element={<Booking />} />
-            <Route path="/reservations" element={<div>reservation</div>} />
+            <Route path="/reservation" element={<Reservation />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<Pagenotfound />} />
@@ -82,7 +78,7 @@ function App() {
             }
           >
             <Route
-              path="admin"
+              path="/admin"
               element={<Navigate to="/admin/dashboard" replace />}
             />
             <Route path="admin/dashboard" element={<Admin />} />

@@ -4,10 +4,11 @@ import Navbar from "./Navbar";
 function Applayout() {
   return (
     <>
-      <div className="grid h-screen overflow-hidden  grid-rows-[auto,1fr, auto] text-black dark:text-white bg-white dark:bg-black">
-        <div>
-          <Navbar />
-        </div>
+      <div className="grid h-screen overflow-hidden  grid-rows-[auto,1fr] text-black dark:text-white bg-white dark:bg-black">
+        {/* <div> */}
+        {/* grid-rows-[auto,1fr, auto] */}
+        <Navbar />
+        {/* </div> */}
 
         <div className="overflow-y-scroll">
           <main className="mx-auto h-full">

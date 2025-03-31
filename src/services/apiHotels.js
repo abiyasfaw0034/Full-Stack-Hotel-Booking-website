@@ -10,7 +10,7 @@ const db = getFirestore();
 
 export const getHotels = async () => {
   try {
-    const querySnapshot = await getDocs(collection(db, "hotels"));
+    const querySnapshot = await getDocs(collection(db, "Hotels"));
     const hotels = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
@@ -24,7 +24,7 @@ export const getHotels = async () => {
 
 export const getHotel = async (hotelId) => {
   try {
-    const docRef = doc(db, "hotels", hotelId);
+    const docRef = doc(db, "Hotels", hotelId);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {

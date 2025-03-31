@@ -9,7 +9,7 @@
 2, google authenticator(sign in with google)
 
 // hotel
-1, map css(kinda stuck in there)
+1, map css(kinda stuck in there)👍
 
 
 //  responsive
@@ -17,3 +17,6 @@
 
 // cards
 1, on hover, scale must increase like animaiton
+
+//payment
+1, integrating payment in stripe
