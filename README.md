@@ -1,8 +1,30 @@
-# React + Vite
+# 🏨 Hotel Booking Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A user-friendly web application that allows users to browse, search, and book hotel rooms online.
+## 🌟 Features
 
-Currently, two official plugins are available:
+- 🔍 Browse available hotels and rooms
+- 🛏️ View hotel details (room type, amenities, location, etc.)
+- 📅 Book rooms by selecting check-in and check-out dates
+- 👤 User registration and login
+- 📋 View and manage your bookings
+- 🧑‍💼 Admin dashboard to manage hotels and bookings
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 💡 Note: This project does **not** include any payment processing functionality. Bookings are stored for management purposes only.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React / Next.js / Tailwind CSS
+- **Backend:** firebase and supabase for authenticationn
+- **Database:** firebase DB
+- **Authentication:** firebase auth
+- **State Management:** Context API 
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/hotel-booking-site.git
+   cd hotel-booking-site
+   npm i
+   npm run dev
